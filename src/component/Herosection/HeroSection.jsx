@@ -4,37 +4,9 @@ import "./HeroSection.css";
 import { NavLink } from "react-router-dom";
 
 function HeroSection() {
-  const { displayData, setDisplayData, setDetailsData } = UseDataContext();
+  const { displayData, setDisplayData, setDetailsData, fetchData, loading } =
+    UseDataContext();
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-
-  async function fetchData() {
-    setLoading(true);
-    try {
-      let response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      let parsedResponse = await response.json();
-      const pokemonUrls = parsedResponse.results.map((result) => result.url);
-      const pokemonData = await Promise.all(
-        pokemonUrls.map(async (url) => {
-          const pokemonResponse = await fetch(url);
-          if (!pokemonResponse.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return pokemonResponse.json();
-        })
-      );
-      setDisplayData((prevData) => [...prevData, ...pokemonData]);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   useEffect(() => {
     fetchData();
@@ -66,6 +38,10 @@ function HeroSection() {
             key={index}
             onClick={() => setDetailsData(e)}
             className="pokemon_boxes"
+            id={e.types.map((elem, typeIndex) => elem.type.name).join("-")}
+            // style={{
+            //   background: e.types[0].type.name === "grass" ? "green" : "orange",
+            // }}
           >
             <div>
               <div className="pokemon-id">

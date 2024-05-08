@@ -38,7 +38,12 @@ function Details() {
 
   return (
     <div className="details">
-      <div className="inner-details">
+      <div
+        className="inner-details"
+        id={detailsData.types
+          .map((elem, typeIndex) => elem.type.name)
+          .join("-")}
+      >
         <div className="details-box1">
           <div className="details-box1-id">
             <h2>#{detailsData.id}</h2>

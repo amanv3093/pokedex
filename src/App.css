@@ -1,0 +1,1324 @@
+#grass {
+  background-color: rgb(168, 255, 152);
+}
+
+#bug {
+  background-color: #729f3f;
+}
+
+#fire {
+  background-color: #fd7d24;
+}
+
+#water {
+  background-color: #4592c4;
+}
+
+#ice {
+  background-color: #51c4e7;
+}
+
+#electric {
+  background-color: #eed535;
+}
+
+#psychic {
+  background-color: #f366b9;
+}
+
+#fairy {
+  background-color: #fdb9e9;
+}
+
+#ghost {
+  background-color: #7b62a3;
+}
+
+#ground {
+  background-color: #f7de3f;
+}
+
+#poison {
+  background-color: #b97fc9;
+}
+
+#fairy {
+  background-color: #fdb9e9;
+}
+
+#normal {
+  background-color: #a4acaf;
+}
+
+#dragon {
+  background-color: goldenrod;
+}
+
+#fighting {
+  background-color: #d56723;
+}
+
+#rock {
+  background-color: #a38c21;
+}
+#dark {
+  background-color: rgb(190, 53, 53);
+}
+#steel {
+  background-color: #919191;
+}
+#flying {
+  background-color: #3f9f7f;
+}
+
+/* Grass with other types */
+#grass-bug,
+#bug-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #729f3f);
+}
+
+#grass-dark,
+#dark-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), rgb(190, 53, 53));
+}
+
+#grass-dragon,
+#dragon-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), goldenrod);
+}
+
+#grass-electric,
+#electric-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #eed535);
+}
+
+#grass-fairy,
+#fairy-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #fdb9e9);
+}
+
+#grass-fighting,
+#fighting-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #d56723);
+}
+
+#grass-fire,
+#fire-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #fd7d24);
+}
+
+#grass-ghost,
+#ghost-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #7b62a3);
+}
+
+#grass-ground,
+#ground-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #f7de3f);
+}
+
+#grass-ice,
+#ice-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #51c4e7);
+}
+
+#grass-normal,
+#normal-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #a4acaf);
+}
+
+#grass-poison,
+#poison-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #b97fc9);
+}
+
+#grass-psychic,
+#psychic-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #f366b9);
+}
+
+#grass-rock,
+#rock-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #a38c21);
+}
+
+#grass-steel,
+#steel-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #919191);
+}
+
+#grass-water,
+#water-grass {
+  background-image: linear-gradient(rgb(168, 255, 152), #4592c4);
+}
+
+/* Repeat for other types */
+/* Water with other types */
+#water-bug,
+#bug-water {
+  background-image: linear-gradient(#4592c4, #729f3f);
+}
+
+#water-dark,
+#dark-water {
+  background-image: linear-gradient(#4592c4, rgb(190, 53, 53));
+}
+
+#water-dragon,
+#dragon-water {
+  background-image: linear-gradient(#4592c4, goldenrod);
+}
+
+#water-electric,
+#electric-water {
+  background-image: linear-gradient(#4592c4, #eed535);
+}
+
+#water-fairy,
+#fairy-water {
+  background-image: linear-gradient(#4592c4, #fdb9e9);
+}
+
+#water-fighting,
+#fighting-water {
+  background-image: linear-gradient(#4592c4, #d56723);
+}
+
+#water-fire,
+#fire-water {
+  background-image: linear-gradient(#4592c4, #fd7d24);
+}
+
+#water-ghost,
+#ghost-water {
+  background-image: linear-gradient(#4592c4, #7b62a3);
+}
+
+#water-ground,
+#ground-water {
+  background-image: linear-gradient(#4592c4, #f7de3f);
+}
+
+#water-ice,
+#ice-water {
+  background-image: linear-gradient(#4592c4, #51c4e7);
+}
+
+#water-normal,
+#normal-water {
+  background-image: linear-gradient(#4592c4, #a4acaf);
+}
+
+#water-poison,
+#poison-water {
+  background-image: linear-gradient(#4592c4, #b97fc9);
+}
+
+#water-psychic,
+#psychic-water {
+  background-image: linear-gradient(#4592c4, #f366b9);
+}
+
+#water-rock,
+#rock-water {
+  background-image: linear-gradient(#4592c4, #a38c21);
+}
+
+#water-steel,
+#steel-water {
+  background-image: linear-gradient(#4592c4, #919191);
+}
+
+#water-flying,
+#flying-water {
+  background-image: linear-gradient(#4592c4, #3f9f7f);
+}
+
+/* Bug with other types */
+#bug-dark,
+#dark-bug {
+  background-image: linear-gradient(#729f3f, rgb(190, 53, 53));
+}
+
+#bug-dragon,
+#dragon-bug {
+  background-image: linear-gradient(#729f3f, goldenrod);
+}
+
+#bug-electric,
+#electric-bug {
+  background-image: linear-gradient(#729f3f, #eed535);
+}
+
+#bug-fairy,
+#fairy-bug {
+  background-image: linear-gradient(#729f3f, #fdb9e9);
+}
+
+#bug-fighting,
+#fighting-bug {
+  background-image: linear-gradient(#729f3f, #d56723);
+}
+
+#bug-fire,
+#fire-bug {
+  background-image: linear-gradient(#729f3f, #fd7d24);
+}
+
+#bug-ghost,
+#ghost-bug {
+  background-image: linear-gradient(#729f3f, #7b62a3);
+}
+
+#bug-ground,
+#ground-bug {
+  background-image: linear-gradient(#729f3f, #f7de3f);
+}
+
+#bug-ice,
+#ice-bug {
+  background-image: linear-gradient(#729f3f, #51c4e7);
+}
+
+#bug-normal,
+#normal-bug {
+  background-image: linear-gradient(#729f3f, #a4acaf);
+}
+
+#bug-poison,
+#poison-bug {
+  background-image: linear-gradient(#729f3f, #b97fc9);
+}
+
+#bug-psychic,
+#psychic-bug {
+  background-image: linear-gradient(#729f3f, #f366b9);
+}
+
+#bug-rock,
+#rock-bug {
+  background-image: linear-gradient(#729f3f, #a38c21);
+}
+
+#bug-steel,
+#steel-bug {
+  background-image: linear-gradient(#729f3f, #919191);
+}
+
+#bug-water,
+#water-bug {
+  background-image: linear-gradient(#729f3f, #4592c4);
+}
+
+/* Repeat for other types */
+/* Normal with other types */
+#normal-bug,
+#bug-normal {
+  background-image: linear-gradient(#a4acaf, #729f3f);
+}
+
+#normal-dark,
+#dark-normal {
+  background-image: linear-gradient(#a4acaf, rgb(190, 53, 53));
+}
+
+#normal-dragon,
+#dragon-normal {
+  background-image: linear-gradient(#a4acaf, goldenrod);
+}
+
+#normal-electric,
+#electric-normal {
+  background-image: linear-gradient(#a4acaf, #eed535);
+}
+
+#normal-fairy,
+#fairy-normal {
+  background-image: linear-gradient(#a4acaf, #fdb9e9);
+}
+
+#normal-fighting,
+#fighting-normal {
+  background-image: linear-gradient(#a4acaf, #d56723);
+}
+
+#normal-fire,
+#fire-normal {
+  background-image: linear-gradient(#a4acaf, #fd7d24);
+}
+
+#normal-ghost,
+#ghost-normal {
+  background-image: linear-gradient(#a4acaf, #7b62a3);
+}
+
+#normal-ground,
+#ground-normal {
+  background-image: linear-gradient(#a4acaf, #f7de3f);
+}
+
+#normal-ice,
+#ice-normal {
+  background-image: linear-gradient(#a4acaf, #51c4e7);
+}
+
+#normal-poison,
+#poison-normal {
+  background-image: linear-gradient(#a4acaf, #b97fc9);
+}
+
+#normal-psychic,
+#psychic-normal {
+  background-image: linear-gradient(#a4acaf, #f366b9);
+}
+
+#normal-rock,
+#rock-normal {
+  background-image: linear-gradient(#a4acaf, #a38c21);
+}
+
+#normal-steel,
+#steel-normal {
+  background-image: linear-gradient(#a4acaf, #919191);
+}
+
+#normal-water,
+#water-normal {
+  background-image: linear-gradient(#a4acaf, #4592c4);
+}
+
+/* Repeat for other types */
+/* Flying with other types */
+#flying-bug,
+#bug-flying {
+  background-image: linear-gradient(#3f9f7f, #729f3f);
+}
+
+#flying-dark,
+#dark-flying {
+  background-image: linear-gradient(#3f9f7f, rgb(190, 53, 53));
+}
+
+#flying-dragon,
+#dragon-flying {
+  background-image: linear-gradient(#3f9f7f, goldenrod);
+}
+
+#flying-electric,
+#electric-flying {
+  background-image: linear-gradient(#3f9f7f, #eed535);
+}
+
+#flying-fairy,
+#fairy-flying {
+  background-image: linear-gradient(#3f9f7f, #fdb9e9);
+}
+
+#flying-fighting,
+#fighting-flying {
+  background-image: linear-gradient(#3f9f7f, #d56723);
+}
+
+#flying-fire,
+#fire-flying {
+  background-image: linear-gradient(#3f9f7f, #fd7d24);
+}
+
+#flying-ghost,
+#ghost-flying {
+  background-image: linear-gradient(#3f9f7f, #7b62a3);
+}
+
+#flying-ground,
+#ground-flying {
+  background-image: linear-gradient(#3f9f7f, #f7de3f);
+}
+
+#flying-ice,
+#ice-flying {
+  background-image: linear-gradient(#3f9f7f, #51c4e7);
+}
+
+#flying-normal,
+#normal-flying {
+  background-image: linear-gradient(#3f9f7f, #a4acaf);
+}
+
+#flying-poison,
+#poison-flying {
+  background-image: linear-gradient(#3f9f7f, #b97fc9);
+}
+
+#flying-psychic,
+#psychic-flying {
+  background-image: linear-gradient(#3f9f7f, #f366b9);
+}
+
+#flying-rock,
+#rock-flying {
+  background-image: linear-gradient(#3f9f7f, #a38c21);
+}
+
+#flying-steel,
+#steel-flying {
+  background-image: linear-gradient(#3f9f7f, #919191);
+}
+
+#flying-water,
+#water-flying {
+  background-image: linear-gradient(#3f9f7f, #4592c4);
+}
+
+/* Repeat for other types */
+/* Flying with other types */
+#flying-bug,
+#bug-flying {
+  background-image: linear-gradient(#3f9f7f, #729f3f);
+}
+
+#flying-dark,
+#dark-flying {
+  background-image: linear-gradient(#3f9f7f, rgb(190, 53, 53));
+}
+
+#flying-dragon,
+#dragon-flying {
+  background-image: linear-gradient(#3f9f7f, goldenrod);
+}
+
+#flying-electric,
+#electric-flying {
+  background-image: linear-gradient(#3f9f7f, #eed535);
+}
+
+#flying-fairy,
+#fairy-flying {
+  background-image: linear-gradient(#3f9f7f, #fdb9e9);
+}
+
+#flying-fighting,
+#fighting-flying {
+  background-image: linear-gradient(#3f9f7f, #d56723);
+}
+
+#flying-fire,
+#fire-flying {
+  background-image: linear-gradient(#3f9f7f, #fd7d24);
+}
+
+#flying-ghost,
+#ghost-flying {
+  background-image: linear-gradient(#3f9f7f, #7b62a3);
+}
+
+#flying-ground,
+#ground-flying {
+  background-image: linear-gradient(#3f9f7f, #f7de3f);
+}
+
+#flying-ice,
+#ice-flying {
+  background-image: linear-gradient(#3f9f7f, #51c4e7);
+}
+
+#flying-normal,
+#normal-flying {
+  background-image: linear-gradient(#3f9f7f, #a4acaf);
+}
+
+#flying-poison,
+#poison-flying {
+  background-image: linear-gradient(#3f9f7f, #b97fc9);
+}
+
+#flying-psychic,
+#psychic-flying {
+  background-image: linear-gradient(#3f9f7f, #f366b9);
+}
+
+#flying-rock,
+#rock-flying {
+  background-image: linear-gradient(#3f9f7f, #a38c21);
+}
+
+#flying-steel,
+#steel-flying {
+  background-image: linear-gradient(#3f9f7f, #919191);
+}
+
+#flying-water,
+#water-flying {
+  background-image: linear-gradient(#3f9f7f, #4592c4);
+}
+
+/* Repeat for other types */
+/* Poison with other types */
+#poison-bug,
+#bug-poison {
+  background-image: linear-gradient(#b97fc9, #729f3f);
+}
+
+#poison-dark,
+#dark-poison {
+  background-image: linear-gradient(#b97fc9, rgb(190, 53, 53));
+}
+
+#poison-dragon,
+#dragon-poison {
+  background-image: linear-gradient(#b97fc9, goldenrod);
+}
+
+#poison-electric,
+#electric-poison {
+  background-image: linear-gradient(#b97fc9, #eed535);
+}
+
+#poison-fairy,
+#fairy-poison {
+  background-image: linear-gradient(#b97fc9, #fdb9e9);
+}
+
+#poison-fighting,
+#fighting-poison {
+  background-image: linear-gradient(#b97fc9, #d56723);
+}
+
+#poison-fire,
+#fire-poison {
+  background-image: linear-gradient(#b97fc9, #fd7d24);
+}
+
+#poison-ghost,
+#ghost-poison {
+  background-image: linear-gradient(#b97fc9, #7b62a3);
+}
+
+#poison-ground,
+#ground-poison {
+  background-image: linear-gradient(#b97fc9, #f7de3f);
+}
+
+#poison-ice,
+#ice-poison {
+  background-image: linear-gradient(#b97fc9, #51c4e7);
+}
+
+#poison-normal,
+#normal-poison {
+  background-image: linear-gradient(#b97fc9, #a4acaf);
+}
+
+#poison-psychic,
+#psychic-poison {
+  background-image: linear-gradient(#b97fc9, #f366b9);
+}
+
+#poison-rock,
+#rock-poison {
+  background-image: linear-gradient(#b97fc9, #a38c21);
+}
+
+#poison-steel,
+#steel-poison {
+  background-image: linear-gradient(#b97fc9, #919191);
+}
+
+#poison-water,
+#water-poison {
+  background-image: linear-gradient(#b97fc9, #4592c4);
+}
+
+/* Repeat for other types */
+
+/* Ground with other types */
+#ground-bug,
+#bug-ground {
+  background-image: linear-gradient(#f7de3f, #729f3f);
+}
+
+#ground-dark,
+#dark-ground {
+  background-image: linear-gradient(#f7de3f, rgb(190, 53, 53));
+}
+
+#ground-dragon,
+#dragon-ground {
+  background-image: linear-gradient(#f7de3f, goldenrod);
+}
+
+#ground-electric,
+#electric-ground {
+  background-image: linear-gradient(#f7de3f, #eed535);
+}
+
+#ground-fairy,
+#fairy-ground {
+  background-image: linear-gradient(#f7de3f, #fdb9e9);
+}
+
+#ground-fighting,
+#fighting-ground {
+  background-image: linear-gradient(#f7de3f, #d56723);
+}
+
+#ground-fire,
+#fire-ground {
+  background-image: linear-gradient(#f7de3f, #fd7d24);
+}
+
+#ground-ghost,
+#ghost-ground {
+  background-image: linear-gradient(#f7de3f, #7b62a3);
+}
+
+#ground-ice,
+#ice-ground {
+  background-image: linear-gradient(#f7de3f, #51c4e7);
+}
+
+#ground-normal,
+#normal-ground {
+  background-image: linear-gradient(#f7de3f, #a4acaf);
+}
+
+#ground-poison,
+#poison-ground {
+  background-image: linear-gradient(#f7de3f, #b97fc9);
+}
+
+#ground-psychic,
+#psychic-ground {
+  background-image: linear-gradient(#f7de3f, #f366b9);
+}
+
+#ground-rock,
+#rock-ground {
+  background-image: linear-gradient(#f7de3f, #a38c21);
+}
+
+#ground-steel,
+#steel-ground {
+  background-image: linear-gradient(#f7de3f, #919191);
+}
+
+#ground-water,
+#water-ground {
+  background-image: linear-gradient(#f7de3f, #4592c4);
+}
+
+/* Repeat for other types */
+/* Rock with other types */
+#rock-bug,
+#bug-rock {
+  background-image: linear-gradient(#a38c21, #729f3f);
+}
+
+#rock-dark,
+#dark-rock {
+  background-image: linear-gradient(#a38c21, rgb(190, 53, 53));
+}
+
+#rock-dragon,
+#dragon-rock {
+  background-image: linear-gradient(#a38c21, goldenrod);
+}
+
+#rock-electric,
+#electric-rock {
+  background-image: linear-gradient(#a38c21, #eed535);
+}
+
+#rock-fairy,
+#fairy-rock {
+  background-image: linear-gradient(#a38c21, #fdb9e9);
+}
+
+#rock-fighting,
+#fighting-rock {
+  background-image: linear-gradient(#a38c21, #d56723);
+}
+
+#rock-fire,
+#fire-rock {
+  background-image: linear-gradient(#a38c21, #fd7d24);
+}
+
+#rock-ghost,
+#ghost-rock {
+  background-image: linear-gradient(#a38c21, #7b62a3);
+}
+
+#rock-ground,
+#ground-rock {
+  background-image: linear-gradient(#a38c21, #f7de3f);
+}
+
+#rock-ice,
+#ice-rock {
+  background-image: linear-gradient(#a38c21, #51c4e7);
+}
+
+#rock-normal,
+#normal-rock {
+  background-image: linear-gradient(#a38c21, #a4acaf);
+}
+
+#rock-poison,
+#poison-rock {
+  background-image: linear-gradient(#a38c21, #b97fc9);
+}
+
+#rock-psychic,
+#psychic-rock {
+  background-image: linear-gradient(#a38c21, #f366b9);
+}
+
+#rock-steel,
+#steel-rock {
+  background-image: linear-gradient(#a38c21, #919191);
+}
+
+#rock-water,
+#water-rock {
+  background-image: linear-gradient(#a38c21, #4592c4);
+}
+
+/* Repeat for other types */
+/* Ghost with other types */
+#ghost-bug,
+#bug-ghost {
+  background-image: linear-gradient(#7b62a3, #729f3f);
+}
+
+#ghost-dark,
+#dark-ghost {
+  background-image: linear-gradient(#7b62a3, rgb(190, 53, 53));
+}
+
+#ghost-dragon,
+#dragon-ghost {
+  background-image: linear-gradient(#7b62a3, goldenrod);
+}
+
+#ghost-electric,
+#electric-ghost {
+  background-image: linear-gradient(#7b62a3, #eed535);
+}
+
+#ghost-fairy,
+#fairy-ghost {
+  background-image: linear-gradient(#7b62a3, #fdb9e9);
+}
+
+#ghost-fighting,
+#fighting-ghost {
+  background-image: linear-gradient(#7b62a3, #d56723);
+}
+
+#ghost-fire,
+#fire-ghost {
+  background-image: linear-gradient(#7b62a3, #fd7d24);
+}
+
+#ghost-ground,
+#ground-ghost {
+  background-image: linear-gradient(#7b62a3, #f7de3f);
+}
+
+#ghost-ice,
+#ice-ghost {
+  background-image: linear-gradient(#7b62a3, #51c4e7);
+}
+
+#ghost-normal,
+#normal-ghost {
+  background-image: linear-gradient(#7b62a3, #a4acaf);
+}
+
+#ghost-poison,
+#poison-ghost {
+  background-image: linear-gradient(#7b62a3, #b97fc9);
+}
+
+#ghost-psychic,
+#psychic-ghost {
+  background-image: linear-gradient(#7b62a3, #f366b9);
+}
+
+#ghost-rock,
+#rock-ghost {
+  background-image: linear-gradient(#7b62a3, #a38c21);
+}
+
+#ghost-steel,
+#steel-ghost {
+  background-image: linear-gradient(#7b62a3, #919191);
+}
+
+#ghost-water,
+#water-ghost {
+  background-image: linear-gradient(#7b62a3, #4592c4);
+}
+
+/* Steel with other types */
+#steel-bug,
+#bug-steel {
+  background-image: linear-gradient(#919191, #729f3f);
+}
+
+#steel-dark,
+#dark-steel {
+  background-image: linear-gradient(#919191, rgb(190, 53, 53));
+}
+
+#steel-dragon,
+#dragon-steel {
+  background-image: linear-gradient(#919191, goldenrod);
+}
+
+#steel-electric,
+#electric-steel {
+  background-image: linear-gradient(#919191, #eed535);
+}
+
+#steel-fairy,
+#fairy-steel {
+  background-image: linear-gradient(#919191, #fdb9e9);
+}
+
+#steel-fighting,
+#fighting-steel {
+  background-image: linear-gradient(#919191, #d56723);
+}
+
+#steel-fire,
+#fire-steel {
+  background-image: linear-gradient(#919191, #fd7d24);
+}
+
+#steel-ghost,
+#ghost-steel {
+  background-image: linear-gradient(#919191, #7b62a3);
+}
+
+#steel-ground,
+#ground-steel {
+  background-image: linear-gradient(#919191, #f7de3f);
+}
+
+#steel-ice,
+#ice-steel {
+  background-image: linear-gradient(#919191, #51c4e7);
+}
+
+#steel-normal,
+#normal-steel {
+  background-image: linear-gradient(#919191, #a4acaf);
+}
+
+#steel-poison,
+#poison-steel {
+  background-image: linear-gradient(#919191, #b97fc9);
+}
+
+#steel-psychic,
+#psychic-steel {
+  background-image: linear-gradient(#919191, #f366b9);
+}
+
+#steel-rock,
+#rock-steel {
+  background-image: linear-gradient(#919191, #a38c21);
+}
+
+#steel-water,
+#water-steel {
+  background-image: linear-gradient(#919191, #4592c4);
+}
+
+/* Repeat for other types */
+/* Fire with other types */
+#fire-bug,
+#bug-fire {
+  background-image: linear-gradient(#fd7d24, #729f3f);
+}
+
+#fire-dark,
+#dark-fire {
+  background-image: linear-gradient(#fd7d24, rgb(190, 53, 53));
+}
+
+#fire-dragon,
+#dragon-fire {
+  background-image: linear-gradient(#fd7d24, goldenrod);
+}
+
+#fire-electric,
+#electric-fire {
+  background-image: linear-gradient(#fd7d24, #eed535);
+}
+
+#fire-fairy,
+#fairy-fire {
+  background-image: linear-gradient(#fd7d24, #fdb9e9);
+}
+
+#fire-fighting,
+#fighting-fire {
+  background-image: linear-gradient(#fd7d24, #d56723);
+}
+
+#fire-ghost,
+#ghost-fire {
+  background-image: linear-gradient(#fd7d24, #7b62a3);
+}
+
+#fire-ground,
+#ground-fire {
+  background-image: linear-gradient(#fd7d24, #f7de3f);
+}
+
+#fire-ice,
+#ice-fire {
+  background-image: linear-gradient(#fd7d24, #51c4e7);
+}
+
+#fire-normal,
+#normal-fire {
+  background-image: linear-gradient(#fd7d24, #a4acaf);
+}
+
+#fire-poison,
+#poison-fire {
+  background-image: linear-gradient(#fd7d24, #b97fc9);
+}
+
+#fire-psychic,
+#psychic-fire {
+  background-image: linear-gradient(#fd7d24, #f366b9);
+}
+
+#fire-rock,
+#rock-fire {
+  background-image: linear-gradient(#fd7d24, #a38c21);
+}
+
+#fire-steel,
+#steel-fire {
+  background-image: linear-gradient(#fd7d24, #919191);
+}
+
+#fire-water,
+#water-fire {
+  background-image: linear-gradient(#fd7d24, #4592c4);
+}
+
+/* Repeat for other types */
+/* Electric with other types */
+#electric-bug,
+#bug-electric {
+  background-image: linear-gradient(#eed535, #729f3f);
+}
+
+#electric-dark,
+#dark-electric {
+  background-image: linear-gradient(#eed535, rgb(190, 53, 53));
+}
+
+#electric-dragon,
+#dragon-electric {
+  background-image: linear-gradient(#eed535, goldenrod);
+}
+
+#electric-fairy,
+#fairy-electric {
+  background-image: linear-gradient(#eed535, #fdb9e9);
+}
+
+#electric-fighting,
+#fighting-electric {
+  background-image: linear-gradient(#eed535, #d56723);
+}
+
+#electric-fire,
+#fire-electric {
+  background-image: linear-gradient(#eed535, #fd7d24);
+}
+
+#electric-ghost,
+#ghost-electric {
+  background-image: linear-gradient(#eed535, #7b62a3);
+}
+
+#electric-ground,
+#ground-electric {
+  background-image: linear-gradient(#eed535, #f7de3f);
+}
+
+#electric-ice,
+#ice-electric {
+  background-image: linear-gradient(#eed535, #51c4e7);
+}
+
+#electric-normal,
+#normal-electric {
+  background-image: linear-gradient(#eed535, #a4acaf);
+}
+
+#electric-poison,
+#poison-electric {
+  background-image: linear-gradient(#eed535, #b97fc9);
+}
+
+#electric-psychic,
+#psychic-electric {
+  background-image: linear-gradient(#eed535, #f366b9);
+}
+
+#electric-rock,
+#rock-electric {
+  background-image: linear-gradient(#eed535, #a38c21);
+}
+
+#electric-steel,
+#steel-electric {
+  background-image: linear-gradient(#eed535, #919191);
+}
+
+#electric-water,
+#water-electric {
+  background-image: linear-gradient(#eed535, #4592c4);
+}
+
+/* Repeat for other types */
+/* Dark with other types */
+#dark-bug,
+#bug-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #729f3f);
+}
+
+#dark-dragon,
+#dragon-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), goldenrod);
+}
+
+#dark-electric,
+#electric-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #eed535);
+}
+
+#dark-fairy,
+#fairy-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #fdb9e9);
+}
+
+#dark-fighting,
+#fighting-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #d56723);
+}
+
+#dark-fire,
+#fire-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #fd7d24);
+}
+
+#dark-ghost,
+#ghost-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #7b62a3);
+}
+
+#dark-ground,
+#ground-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #f7de3f);
+}
+
+#dark-ice,
+#ice-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #51c4e7);
+}
+
+#dark-normal,
+#normal-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #a4acaf);
+}
+
+#dark-poison,
+#poison-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #b97fc9);
+}
+
+#dark-psychic,
+#psychic-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #f366b9);
+}
+
+#dark-rock,
+#rock-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #a38c21);
+}
+
+#dark-steel,
+#steel-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #919191);
+}
+
+#dark-water,
+#water-dark {
+  background-image: linear-gradient(rgb(190, 53, 53), #4592c4);
+}
+
+/* Repeat for other types */
+/* Dragon with other types */
+#dragon-bug,
+#bug-dragon {
+  background-image: linear-gradient(goldenrod, #729f3f);
+}
+
+#dragon-dark,
+#dark-dragon {
+  background-image: linear-gradient(goldenrod, rgb(190, 53, 53));
+}
+
+#dragon-electric,
+#electric-dragon {
+  background-image: linear-gradient(goldenrod, #eed535);
+}
+
+#dragon-fairy,
+#fairy-dragon {
+  background-image: linear-gradient(goldenrod, #fdb9e9);
+}
+
+#dragon-fighting,
+#fighting-dragon {
+  background-image: linear-gradient(goldenrod, #d56723);
+}
+
+#dragon-fire,
+#fire-dragon {
+  background-image: linear-gradient(goldenrod, #fd7d24);
+}
+
+#dragon-ghost,
+#ghost-dragon {
+  background-image: linear-gradient(goldenrod, #7b62a3);
+}
+
+#dragon-ground,
+#ground-dragon {
+  background-image: linear-gradient(goldenrod, #f7de3f);
+}
+
+#dragon-ice,
+#ice-dragon {
+  background-image: linear-gradient(goldenrod, #51c4e7);
+}
+
+#dragon-normal,
+#normal-dragon {
+  background-image: linear-gradient(goldenrod, #a4acaf);
+}
+
+#dragon-poison,
+#poison-dragon {
+  background-image: linear-gradient(goldenrod, #b97fc9);
+}
+
+#dragon-psychic,
+#psychic-dragon {
+  background-image: linear-gradient(goldenrod, #f366b9);
+}
+
+#dragon-rock,
+#rock-dragon {
+  background-image: linear-gradient(goldenrod, #a38c21);
+}
+
+#dragon-steel,
+#steel-dragon {
+  background-image: linear-gradient(goldenrod, #919191);
+}
+
+#dragon-water,
+#water-dragon {
+  background-image: linear-gradient(goldenrod, #4592c4);
+}
+
+/* Repeat for other types */
+/* Psychic with other types */
+#psychic-bug,
+#bug-psychic {
+  background-image: linear-gradient(#f366b9, #729f3f);
+}
+
+#psychic-dark,
+#dark-psychic {
+  background-image: linear-gradient(#f366b9, rgb(190, 53, 53));
+}
+
+#psychic-dragon,
+#dragon-psychic {
+  background-image: linear-gradient(#f366b9, goldenrod);
+}
+
+#psychic-electric,
+#electric-psychic {
+  background-image: linear-gradient(#f366b9, #eed535);
+}
+
+#psychic-fairy,
+#fairy-psychic {
+  background-image: linear-gradient(#f366b9, #fdb9e9);
+}
+
+#psychic-fighting,
+#fighting-psychic {
+  background-image: linear-gradient(#f366b9, #d56723);
+}
+
+#psychic-fire,
+#fire-psychic {
+  background-image: linear-gradient(#f366b9, #fd7d24);
+}
+
+#psychic-ghost,
+#ghost-psychic {
+  background-image: linear-gradient(#f366b9, #7b62a3);
+}
+
+#psychic-ground,
+#ground-psychic {
+  background-image: linear-gradient(#f366b9, #f7de3f);
+}
+
+#psychic-ice,
+#ice-psychic {
+  background-image: linear-gradient(#f366b9, #51c4e7);
+}
+
+#psychic-normal,
+#normal-psychic {
+  background-image: linear-gradient(#f366b9, #a4acaf);
+}
+
+#psychic-poison,
+#poison-psychic {
+  background-image: linear-gradient(#f366b9, #b97fc9);
+}
+
+#psychic-rock,
+#rock-psychic {
+  background-image: linear-gradient(#f366b9, #a38c21);
+}
+
+#psychic-steel,
+#steel-psychic {
+  background-image: linear-gradient(#f366b9, #919191);
+}
+
+#psychic-water,
+#water-psychic {
+  background-image: linear-gradient(#f366b9, #4592c4);
+}
+
+/* Repeat for other types */

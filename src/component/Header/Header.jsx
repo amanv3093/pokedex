@@ -11,6 +11,7 @@ function Header() {
     isLoading,
     displayData,
     setDisplayData,
+    fetchData,
   } = UseDataContext();
 
   const handleTypeChange = async (e) => {
@@ -18,6 +19,7 @@ function Header() {
     setDisplayData([]);
     setTypeData(async () => {
       try {
+        console.log(selectedType);
         if (selectedType !== "All") {
           let x = 0;
           for (let i = 0; i < data.length; i++) {
@@ -31,7 +33,6 @@ function Header() {
             throw new Error("Network response was not ok");
           }
           const parseResponse = await response.json();
-          // console.log("Response:", parseResponse);
 
           for (let i = 0; i < parseResponse.pokemon.length; i++) {
             const pokemonUrl = parseResponse.pokemon[i].pokemon.url;
@@ -40,24 +41,8 @@ function Header() {
             setDisplayData((prevData) => [...prevData, pokemonData]);
           }
         } else {
-          let x = 0;
-          for (let i = 0; i < data.length; i++) {
-            x = i;
-
-            const response = await fetch(data[x].url);
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            const parseResponse = await response.json();
-            // console.log("Response:", parseResponse);
-
-            for (let i = 0; i < parseResponse.pokemon.length; i++) {
-              const pokemonUrl = parseResponse.pokemon[i].pokemon.url;
-              const pokemonResponse = await fetch(pokemonUrl);
-              const pokemonData = await pokemonResponse.json();
-              setDisplayData((prevData) => [...prevData, pokemonData]);
-            }
-          }
+          console.log("i am");
+          fetchData(1);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -76,15 +61,23 @@ function Header() {
         <div>
           <p>Search by Type:</p>
           <select onChange={handleTypeChange}>
-            <option value="">All</option>
+            <option>All</option>
             {data &&
-              data.map((elem, key) => (
-                <option key={key} value={elem.name}>
-                  {elem.name}
-                </option>
-              ))}
+              data.map((elem, key) =>
+                key < 18 ? (
+                  <option key={key} value={elem.name}>
+                    {elem.name}
+                  </option>
+                ) : (
+                  ""
+                )
+              )}
           </select>
           {isLoading && <div>Loading...</div>}
+        </div>
+        <div>
+          <p>Search by Type:</p>
+          <input type="text" />
         </div>
       </div>
     </header>
