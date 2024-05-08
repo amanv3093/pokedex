@@ -1,7 +1,7 @@
-// Header.js
 import "./Header.css";
 import pokeDexImg from "../../assets/pokedex.2800773d.png";
 import { UseDataContext } from "../../context/Context";
+import { useState } from "react";
 
 function Header() {
   const {
@@ -13,6 +13,19 @@ function Header() {
     setDisplayData,
     fetchData,
   } = UseDataContext();
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearchChange = async () => {
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${searchQuery}`
+      );
+
+      const pokemonData = await response.json();
+      setDisplayData([pokemonData]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleTypeChange = async (e) => {
     const selectedType = e.target.value;
@@ -41,8 +54,7 @@ function Header() {
             setDisplayData((prevData) => [...prevData, pokemonData]);
           }
         } else {
-          console.log("i am");
-          fetchData(1);
+          fetchData();
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -77,7 +89,12 @@ function Header() {
         </div>
         <div>
           <p>Search by Type:</p>
-          <input type="text" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button onClick={handleSearchChange}>click</button>
         </div>
       </div>
     </header>

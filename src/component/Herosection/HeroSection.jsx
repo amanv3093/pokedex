@@ -4,20 +4,23 @@ import "./HeroSection.css";
 import { NavLink } from "react-router-dom";
 
 function HeroSection() {
-  const { displayData, setDisplayData, setDetailsData, fetchData, loading } =
-    UseDataContext();
+  const { displayData, setDetailsData, fetchData, loading } = UseDataContext();
   const [page, setPage] = useState(1);
+  const [reachedEnd, setReachedEnd] = useState(false);
 
   useEffect(() => {
-    fetchData();
-  }, [page]);
+    if (page > 1) {
+      fetchData(page);
+    }
+  }, [page, fetchData]);
 
   useEffect(() => {
     function handleScroll() {
       if (
         window.innerHeight + document.documentElement.scrollTop ===
           document.documentElement.offsetHeight &&
-        !loading
+        !loading &&
+        !reachedEnd
       ) {
         setPage((prevPage) => prevPage + 1);
       }
@@ -27,26 +30,31 @@ function HeroSection() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [loading]);
+  }, [loading, reachedEnd]);
+
+  useEffect(() => {
+    if (displayData.length < page * 20) {
+      setReachedEnd(true);
+    } else {
+      setReachedEnd(false);
+    }
+  }, [displayData, page]);
 
   return (
     <div className="HeroSection">
       {displayData &&
-        displayData.slice(0, page * 20).map((e, index) => (
+        displayData.map((e, index) => (
           <NavLink
             to="/details"
             key={index}
             onClick={() => setDetailsData(e)}
             className="pokemon_boxes"
             id={e.types.map((elem, typeIndex) => elem.type.name).join("-")}
-            // style={{
-            //   background: e.types[0].type.name === "grass" ? "green" : "orange",
-            // }}
           >
             <div>
               <div className="pokemon-id">
                 <span>#{e.id}</span>
-                <span class="material-symbols-outlined">favorite</span>
+                <span className="material-symbols-outlined">favorite</span>
               </div>
               <div className="pokemon-img">
                 <img

@@ -18,6 +18,7 @@ export const DataContextProvider = (props) => {
   const [displayData, setDisplayData] = useState([]);
   const [detailsData, setDetailsData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchFilter, setSearchFilter] = useState([]);
 
   console.log(detailsData);
   async function fetchData(page) {
@@ -47,11 +48,17 @@ export const DataContextProvider = (props) => {
       setLoading(false);
     }
   }
+
   useEffect(() => {
     async function fetchData2() {
       const response = await fetch("https://pokeapi.co/api/v2/type/");
       const parseResponse = await response.json();
       setData(parseResponse.results);
+      const response3 = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+      );
+      const parseResponse3 = await response3.json();
+      setSearchFilter(parseResponse3)
     }
     fetchData2();
     fetchData(1);
@@ -70,6 +77,7 @@ export const DataContextProvider = (props) => {
         setLoading,
         loading,
         fetchData,
+        searchFilter
       }}
     >
       {props.children}
