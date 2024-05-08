@@ -1,0 +1,62 @@
+.HeroSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.pokemon_boxes {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* width: 225px;
+  height: 330px; */
+  width: 291px;
+  height: 380px;
+  padding: 20px 10px;
+  border-radius: 15px;
+  background: orange;
+  text-decoration: none;
+  color: black;
+}
+.pokemon-id {
+  font-size: max(2vw, 22px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pokemon-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+.pokemon-img img {
+  height: 190px;
+  width: 190px;
+}
+.pokemon-name {
+  text-align: center;
+}
+.pokemon-name h2 {
+  font-size: 26px;
+  font-weight: 800;
+  padding-bottom: 15px;
+  padding: 26px 0px;
+}
+.pokemon-types {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-decoration: none;
+}
+.pokemon-types-inner {
+  width: 45%;
+  background: white;
+  text-align: center;
+  padding: 5px 0px;
+  border-radius: 15px;
+}
+.pokemon-types p {
+  font-weight: 800;
+}
