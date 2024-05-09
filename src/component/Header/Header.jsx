@@ -142,7 +142,9 @@ function Header() {
           </div> */}
         </div>
         <div>
-          <p>Search by Name:</p>
+          <p style={{ textAlign: "center", paddingBottom: "5px" }}>
+            Search by Name:
+          </p>
           <input
             type="text"
             value={searchQuery}
