@@ -1,5 +1,6 @@
 // Context.js
-import { createContext, useContext, useEffect, useState } from "react";
+
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 export const DataContext = createContext(null);
 
@@ -8,44 +9,41 @@ export const UseDataContext = () => {
 };
 
 export const DataContextProvider = (props) => {
-  const [boxBgColor, setBoxBgColor] = useState([
-    {
-      grass: "green",
-    },
-  ]);
   const [data, setData] = useState([]);
   const [typeData, setTypeData] = useState("All");
   const [displayData, setDisplayData] = useState([]);
   const [detailsData, setDetailsData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [searchFilter, setSearchFilter] = useState([]);
+  const [newTypeData, SetNewTypeData] = useState("All");
+  const [page, setPage] = useState(1);
+  const [favorites, setFavorites] = useState([]);
 
-  console.log(detailsData);
   async function fetchData(page) {
     setLoading(true);
-    try {
-      let response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+    if (newTypeData === "All") {
+      try {
+        let response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 10}`
+        );
+
+        let parsedResponse = await response.json();
+        const pokemonUrls = parsedResponse.results.map((result) => result.url);
+        const pokemonData = await Promise.all(
+          pokemonUrls.map(async (url) => {
+            const pokemonResponse = await fetch(url);
+            if (!pokemonResponse.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return pokemonResponse.json();
+          })
+        );
+        setDisplayData((prevData) => [...prevData, ...pokemonData]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
-      let parsedResponse = await response.json();
-      const pokemonUrls = parsedResponse.results.map((result) => result.url);
-      const pokemonData = await Promise.all(
-        pokemonUrls.map(async (url) => {
-          const pokemonResponse = await fetch(url);
-          if (!pokemonResponse.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return pokemonResponse.json();
-        })
-      );
-      setDisplayData((prevData) => [...prevData, ...pokemonData]);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
     }
   }
 
@@ -58,12 +56,12 @@ export const DataContextProvider = (props) => {
         "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
       );
       const parseResponse3 = await response3.json();
-      setSearchFilter(parseResponse3)
+      setSearchFilter(parseResponse3);
     }
     fetchData2();
     fetchData(1);
   }, []);
-  console.log(displayData);
+
   return (
     <DataContext.Provider
       value={{
@@ -77,7 +75,13 @@ export const DataContextProvider = (props) => {
         setLoading,
         loading,
         fetchData,
-        searchFilter
+        searchFilter,
+        newTypeData,
+        SetNewTypeData,
+        page,
+        setPage,
+        favorites,
+        setFavorites,
       }}
     >
       {props.children}

@@ -1,9 +1,13 @@
 .HeroSection {
+  padding-top: 2rem;
+}
+.infinite-scroll-component__outerdiv {
+}
+.infinite-scroll-component {
   display: flex;
   flex-wrap: wrap;
   gap: 35px;
   justify-content: center;
-  padding-top: 2rem;
 }
 .pokemon_boxes {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -15,7 +19,7 @@
   border-radius: 15px;
   /* background: orange; */
   text-decoration: none;
-  color: black;
+  color: #383636;
 }
 .pokemon-id {
   font-size: max(2vw, 22px);
@@ -43,6 +47,7 @@
   font-weight: 800;
   padding-bottom: 15px;
   padding: 26px 0px;
+  text-transform: capitalize;
 }
 .pokemon-types {
   display: flex;
@@ -59,4 +64,12 @@
 }
 .pokemon-types p {
   font-weight: 800;
+}
+.favorite-active {
+  color: rgb(239 59 77) !important; /* Change to your desired red color */
+}
+.material-symbols-outlined {
+  cursor: pointer;
+  color: #383636;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }

@@ -3,16 +3,21 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
-
+.detailsMain-box {
+  width: 80%;
+  height: 90vh;
+  overflow: hidden;
+  border-radius: 15px;
+}
 .inner-details {
-  width: 70%;
-  height: 80vh;
   background-color: rgb(177, 158, 158);
   padding: 10px;
   display: flex;
   overflow-y: scroll;
+  gap: 10px;
+  height: 100%;
 }
 .details-box1 {
   width: 30%;
@@ -21,13 +26,22 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 37px 2px;
+  justify-content: center;
+  /* padding: 37px 2px; */
+}
+.details-box1-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .details-box1-id {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+
+  gap: 10px;
 }
 .pokemon-types-inner2 {
   display: flex;
@@ -36,7 +50,7 @@
   padding: 30px 0px;
 }
 .pokemon-types-inner2 p {
-  background-color: black;
+  background-color: #383636;
   border-radius: 15px;
   color: white;
   padding: 4px 10px;
@@ -51,6 +65,7 @@
 }
 .details-box2 {
   width: 70%;
+  height: 100%;
 }
 .details-box2-inner {
   height: 100%;
@@ -68,6 +83,7 @@
   display: flex;
   background-color: rgba(255, 255, 255, 0.47058823529411764);
   padding: 10px;
+  gap: 15px;
 }
 .evolution {
 }
@@ -78,6 +94,7 @@
   display: flex;
   background-color: rgba(255, 255, 255, 0.47058823529411764);
   padding: 10px;
+  gap: 15px;
 }
 
 .Hie-Wie {
@@ -100,4 +117,70 @@
 }
 .inner-base-state-box {
   width: 33.3%;
+}
+
+@media screen and (max-width: 768px) {
+  .inner-details {
+    flex-direction: column;
+  }
+  .details-box1 {
+    width: 100% !important;
+    padding: 0px !important;
+  }
+  .details-box2 {
+    width: 100% !important;
+  }
+  .details-box1-img {
+    width: 130px;
+    height: 190px;
+  }
+  .pokemon-types-inner2 {
+    padding: 6px 0px;
+  }
+  .details-box1-id {
+    padding: 0px;
+  }
+
+  .Hie-Wie {
+    flex-direction: row;
+    font-size: 12px;
+    gap: 14px;
+    padding-bottom: 10px;
+  }
+  .base-state-box {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .inner-base-state-box {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+  .evolution-box {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .details-box2-inner {
+    gap: 20px;
+    padding-top: 1rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1332px) {
+  .Hie-Wie {
+    /* flex-direction: row; */
+    font-size: 15px;
+    /* gap: 8px; */
+    padding-bottom: 10px;
+  }
+  .details-box1-img {
+    width: 175px;
+  }
+
+  .details-box1-id {
+    font-size: 12px;
+    padding-bottom: 0px;
+  }
+  .details-box1-inner {
+    gap: 0px;
+  }
 }

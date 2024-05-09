@@ -1,7 +1,33 @@
 header {
+}
+.logo {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo h1 {
+  font-size: max(3vw, 20px);
+  color: #ffe100;
+}
+.favorite-head-anchor {
+  text-decoration: none;
+}
+.favorite-head {
+  font-size: max(3vw, 30px);
+}
+.header-types {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  
+  gap: 15px;
+}
+.header-types-box1 {
+  display: flex;
+  gap: 20px;
+}
+.header-types-box1 div {
+  display: flex;
+
+  flex-direction: column;
 }

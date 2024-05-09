@@ -1,17 +1,17 @@
 import "./Header.css";
-import pokeDexImg from "../../assets/pokedex.2800773d.png";
 import { UseDataContext } from "../../context/Context";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const {
     data,
-    setTypeData,
-    typeData,
-    isLoading,
-    displayData,
     setDisplayData,
+    displayData,
     fetchData,
+    setLoading,
+    favorites,
+    SetNewTypeData,
   } = UseDataContext();
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearchChange = async () => {
@@ -28,70 +28,96 @@ function Header() {
   };
 
   const handleTypeChange = async (e) => {
+    setLoading(true);
     const selectedType = e.target.value;
     setDisplayData([]);
-    setTypeData(async () => {
-      try {
-        console.log(selectedType);
-        if (selectedType !== "All") {
-          let x = 0;
-          for (let i = 0; i < data.length; i++) {
-            if (data[i].name === selectedType) {
-              x = i;
-            }
-          }
-
-          const response = await fetch(data[x].url);
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          const parseResponse = await response.json();
-
-          for (let i = 0; i < parseResponse.pokemon.length; i++) {
-            const pokemonUrl = parseResponse.pokemon[i].pokemon.url;
-            const pokemonResponse = await fetch(pokemonUrl);
-            const pokemonData = await pokemonResponse.json();
-            setDisplayData((prevData) => [...prevData, pokemonData]);
-          }
-        } else {
-          fetchData();
+    try {
+      if (selectedType !== "All") {
+        const typeIndex = data.findIndex((elem) => elem.name === selectedType);
+        if (typeIndex === -1) {
+          throw new Error("Type not found in data");
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        const response = await fetch(data[typeIndex].url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const parsedResponse = await response.json();
+        const pokemonUrls = parsedResponse.pokemon.map(
+          (pokemon) => pokemon.pokemon.url
+        );
+        const pokemonDataPromises = pokemonUrls.map(async (url) => {
+          const pokemonResponse = await fetch(url);
+          return pokemonResponse.json();
+        });
+        const pokemonData = await Promise.all(pokemonDataPromises);
+        setDisplayData(pokemonData);
+      } else {
+        fetchData(1);
       }
-      return selectedType;
-    });
-    console.log(typeData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+
+    setLoading(false);
   };
 
+  const handleFilterChange = async (e) => {};
+
+  console.log(displayData);
   return (
     <header>
       <div className="logo">
-        <img src={pokeDexImg} alt="logo" />
+        <h1>
+          Pok<span style={{ color: "rgb(239 59 77)" }}>é</span>dex
+        </h1>
+        <NavLink to="/wishlist" className="favorite-head-anchor">
+          <span
+            className="material-symbols-outlined favorite-head"
+            style={{
+              color: favorites.length > 0 ? "rgb(239 59 77) " : "#383636",
+            }}
+          >
+            favorite
+          </span>
+        </NavLink>
       </div>
-      <div>
-        <div>
-          <p>Search by Type:</p>
-          <select onChange={handleTypeChange}>
-            <option>All</option>
-            {data &&
-              data.map((elem, key) =>
-                key < 18 ? (
-                  <option key={key} value={elem.name}>
-                    {elem.name}
-                  </option>
-                ) : (
-                  ""
-                )
-              )}
-          </select>
-          {isLoading && <div>Loading...</div>}
+      <div className="header-types">
+        <div className="header-types-box1">
+          <div>
+            <p>Search by Type:</p>
+            <select onChange={handleTypeChange}>
+              <option value="All">All</option>
+              {data &&
+                data.map((elem, key) =>
+                  key < 18 ? (
+                    <option key={key} value={elem.name}>
+                      {elem.name}
+                    </option>
+                  ) : (
+                    ""
+                  )
+                )}
+            </select>
+          </div>
+          <div>
+            <p>Filter by:</p>
+            <select onChange={handleFilterChange}>
+              <option value="pokemon">All</option>
+              <option value="ability">Abilities</option>
+              <option value="characteristic">Characteristics</option>
+              <option value="Group">egg-group</option>
+              <option value="Habitat">pokemon-habitat</option>
+              <option value="Location">Location</option>
+              <option value="Species">pokemon-species</option>
+            </select>
+          </div>
         </div>
         <div>
           <p>Search by Type:</p>
           <input
             type="text"
             value={searchQuery}
+            placeholder="Search by name."
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button onClick={handleSearchChange}>click</button>
