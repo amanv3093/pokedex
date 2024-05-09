@@ -3,11 +3,13 @@ import { UseDataContext } from "../../context/Context";
 import { useEffect, useState } from "react";
 
 function Details() {
-  const { detailsData, favorites, setFavorites } = UseDataContext();
+  const { detailsData, favorites, setFavorites, setAbilityValue } =
+    UseDataContext();
 
   const [evolutionData, setEvolutionData] = useState([]);
 
   useEffect(() => {
+    setAbilityValue(null);
     async function fetchEvolutionChain() {
       try {
         const response = await fetch(

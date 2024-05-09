@@ -12,20 +12,26 @@ function Header() {
     setLoading,
     favorites,
     globalData,
+    abilityValue,
+    setAbilityValue,
   } = UseDataContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [abilityList, setAbilityList] = useState([]);
-  const [abilityValue, setAbilityValue] = useState(null);
-  const handleSearchChange = async () => {
-    try {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${searchQuery}`
-      );
 
-      const pokemonData = await response.json();
-      setDisplayData([pokemonData]);
-    } catch (error) {
-      console.error(error);
+  const handleSearchChange = async () => {
+    if (searchQuery.length === 0) {
+      alert("Please enter the Pokémon name");
+    } else {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${searchQuery}`
+        );
+
+        const pokemonData = await response.json();
+        setDisplayData([pokemonData]);
+      } catch (error) {
+        alert("The Pokémon name entered is not valid");
+      }
     }
   };
 
@@ -62,37 +68,33 @@ function Header() {
 
     setLoading(false);
   };
-  // const filtereData = () => {
-  //   if (!abilityValue || abilityValue === "") {
-  //     // If abilityValue is not set or empty, display all data
-  //     setDisplayData([...globalData]);
-  //   } else {
-  //     // Filter data based on abilityValue
-  //     console.log(abilityValue);
-  //     let filtered = globalData.filter(
-  //       (element) =>
-  //         Array.isArray(element.abilities) && // Check if abilities is an array
-  //         element.abilities.some((ability) => ability.name === abilityValue)
-  //     );
-  //     // Update displayData state with filtered results
-  //     console.log(filtered);
-  //     // setDisplayData(filtered);
-  //   }
-  // };
+  const filtereData = () => {
+    setLoading(true);
+    console.log("whyh");
+    if (abilityValue === null) {
+      fetchData(1);
+    } else {
+      let filteredData = globalData.filter((item) =>
+        item.abilities.some((ability) => ability.ability.name === abilityValue)
+      );
+      setDisplayData(filteredData);
+    }
+    console.log(displayData);
+    setLoading(false);
+  };
 
-  // const Abilities = async () => {
-  //   let data = await fetch("https://pokeapi.co/api/v2/ability?limit=100");
-  //   let convertedData = await data.json();
-  //   setAbilityList([...convertedData.results]);
-  // };
+  const Abilities = async () => {
+    let data = await fetch("https://pokeapi.co/api/v2/ability?limit=100");
+    let convertedData = await data.json();
+    setAbilityList([...convertedData.results]);
+  };
 
-  // useEffect(() => {
-  //   Abilities();
-  // }, []);
-  // useEffect(() => {
-  //   filtereData();
-  //   // console.log(globalData);
-  // }, [abilityValue]);
+  useEffect(() => {
+    Abilities();
+  }, []);
+  useEffect(() => {
+    filtereData();
+  }, [abilityValue]);
 
   return (
     <header>
@@ -129,7 +131,7 @@ function Header() {
                 )}
             </select>
           </div>
-          {/* <div>
+          <div>
             <p>Filter by Abilities:</p>
 
             <select onChange={(e) => setAbilityValue(e.target.value)}>
@@ -139,19 +141,21 @@ function Header() {
                 </option>
               ))}
             </select>
-          </div> */}
+          </div>
         </div>
-        <div>
+        <div className="search-box">
           <p style={{ textAlign: "center", paddingBottom: "5px" }}>
             Search by Name:
           </p>
-          <input
-            type="text"
-            value={searchQuery}
-            placeholder="Search by name."
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button onClick={handleSearchChange}>click</button>
+          <div className="input-box">
+            <input
+              type="text"
+              value={searchQuery}
+              placeholder="Search by name."
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button onClick={handleSearchChange}>Search</button>
+          </div>
         </div>
       </div>
     </header>
