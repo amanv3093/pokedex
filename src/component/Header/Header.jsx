@@ -1,6 +1,6 @@
 import "./Header.css";
 import { UseDataContext } from "../../context/Context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
@@ -11,9 +11,11 @@ function Header() {
     fetchData,
     setLoading,
     favorites,
-    SetNewTypeData,
+    globalData,
   } = UseDataContext();
   const [searchQuery, setSearchQuery] = useState("");
+  const [abilityList, setAbilityList] = useState([]);
+  const [abilityValue, setAbilityValue] = useState(null);
   const handleSearchChange = async () => {
     try {
       const response = await fetch(
@@ -60,10 +62,38 @@ function Header() {
 
     setLoading(false);
   };
+  // const filtereData = () => {
+  //   if (!abilityValue || abilityValue === "") {
+  //     // If abilityValue is not set or empty, display all data
+  //     setDisplayData([...globalData]);
+  //   } else {
+  //     // Filter data based on abilityValue
+  //     console.log(abilityValue);
+  //     let filtered = globalData.filter(
+  //       (element) =>
+  //         Array.isArray(element.abilities) && // Check if abilities is an array
+  //         element.abilities.some((ability) => ability.name === abilityValue)
+  //     );
+  //     // Update displayData state with filtered results
+  //     console.log(filtered);
+  //     // setDisplayData(filtered);
+  //   }
+  // };
 
-  const handleFilterChange = async (e) => {};
+  // const Abilities = async () => {
+  //   let data = await fetch("https://pokeapi.co/api/v2/ability?limit=100");
+  //   let convertedData = await data.json();
+  //   setAbilityList([...convertedData.results]);
+  // };
 
-  console.log(displayData);
+  // useEffect(() => {
+  //   Abilities();
+  // }, []);
+  // useEffect(() => {
+  //   filtereData();
+  //   // console.log(globalData);
+  // }, [abilityValue]);
+
   return (
     <header>
       <div className="logo">
@@ -99,21 +129,20 @@ function Header() {
                 )}
             </select>
           </div>
-          <div>
-            <p>Filter by:</p>
-            <select onChange={handleFilterChange}>
-              <option value="pokemon">All</option>
-              <option value="ability">Abilities</option>
-              <option value="characteristic">Characteristics</option>
-              <option value="Group">egg-group</option>
-              <option value="Habitat">pokemon-habitat</option>
-              <option value="Location">Location</option>
-              <option value="Species">pokemon-species</option>
+          {/* <div>
+            <p>Filter by Abilities:</p>
+
+            <select onChange={(e) => setAbilityValue(e.target.value)}>
+              {abilityList?.map((element, index) => (
+                <option key={index} value={element.name}>
+                  {element.name}
+                </option>
+              ))}
             </select>
-          </div>
+          </div> */}
         </div>
         <div>
-          <p>Search by Type:</p>
+          <p>Search by Name:</p>
           <input
             type="text"
             value={searchQuery}

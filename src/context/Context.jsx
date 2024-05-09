@@ -1,6 +1,4 @@
-// Context.js
-
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const DataContext = createContext(null);
 
@@ -15,35 +13,35 @@ export const DataContextProvider = (props) => {
   const [detailsData, setDetailsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchFilter, setSearchFilter] = useState([]);
-  const [newTypeData, SetNewTypeData] = useState("All");
+  const [globalData, setGlobalData] = useState([]);
+  // const [newTypeData, SetNewTypeData] = useState("All");
   const [page, setPage] = useState(1);
   const [favorites, setFavorites] = useState([]);
 
   async function fetchData(page) {
     setLoading(true);
-    if (newTypeData === "All") {
-      try {
-        let response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 10}`
-        );
 
-        let parsedResponse = await response.json();
-        const pokemonUrls = parsedResponse.results.map((result) => result.url);
-        const pokemonData = await Promise.all(
-          pokemonUrls.map(async (url) => {
-            const pokemonResponse = await fetch(url);
-            if (!pokemonResponse.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return pokemonResponse.json();
-          })
-        );
-        setDisplayData((prevData) => [...prevData, ...pokemonData]);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
+    try {
+      let response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 10}`
+      );
+
+      let parsedResponse = await response.json();
+      const pokemonUrls = parsedResponse.results.map((result) => result.url);
+      const pokemonData = await Promise.all(
+        pokemonUrls.map(async (url) => {
+          const pokemonResponse = await fetch(url);
+          if (!pokemonResponse.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return pokemonResponse.json();
+        })
+      );
+      setDisplayData((prevData) => [...prevData, ...pokemonData]);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -52,16 +50,35 @@ export const DataContextProvider = (props) => {
       const response = await fetch("https://pokeapi.co/api/v2/type/");
       const parseResponse = await response.json();
       setData(parseResponse.results);
-      const response3 = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
-      );
-      const parseResponse3 = await response3.json();
-      setSearchFilter(parseResponse3);
+      // const response3 = await fetch(
+      //   "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+      // );
+      // const parseResponse3 = await response3.json();
+      // setSearchFilter(parseResponse3);
+
+      // let response33 = await fetch(
+      //   `https://pokeapi.co/api/v2/pokemon?limit=300&offset=0}`
+      // );
+
+      // let parsedResponse33 = await response33.json();
+      // const pokemonUrls = parsedResponse33.results.map((result) => result.url);
+      // const pokemonData = await Promise.all(
+      //   pokemonUrls.map(async (url) => {
+      //     const pokemonResponse = await fetch(url);
+      //     if (!pokemonResponse.ok) {
+      //       throw new Error("Network response was not ok");
+      //     }
+      //     return pokemonResponse.json();
+      //   })
+      // );
+      // setGlobalData(pokemonData);
+      // console.log("pokemonData", pokemonData);
     }
+
     fetchData2();
     fetchData(1);
   }, []);
-
+  console.log(globalData);
   return (
     <DataContext.Provider
       value={{
@@ -76,8 +93,7 @@ export const DataContextProvider = (props) => {
         loading,
         fetchData,
         searchFilter,
-        newTypeData,
-        SetNewTypeData,
+        globalData,
         page,
         setPage,
         favorites,
