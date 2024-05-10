@@ -24,13 +24,13 @@ export const DataContextProvider = (props) => {
 
     try {
       let response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 10}`
+        `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
       );
 
       let parsedResponse = await response.json();
-      const pokemonUrls = parsedResponse.results.map((result) => result.url);
-      const pokemonData = await Promise.all(
-        pokemonUrls.map(async (url) => {
+      const newPokemonUrls = parsedResponse.results.map((result) => result.url);
+      const newPokemonData = await Promise.all(
+        newPokemonUrls.map(async (url) => {
           const pokemonResponse = await fetch(url);
           if (!pokemonResponse.ok) {
             throw new Error("Network response was not ok");
@@ -38,7 +38,8 @@ export const DataContextProvider = (props) => {
           return pokemonResponse.json();
         })
       );
-      setDisplayData((prevData) => [...prevData, ...pokemonData]);
+      // Concatenate the new data with the existing display data
+      setDisplayData((prevData) => [...prevData, ...newPokemonData]);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -46,6 +47,7 @@ export const DataContextProvider = (props) => {
     }
   }
 
+  console.log(displayData);
   useEffect(() => {
     async function fetchData2() {
       const response = await fetch("https://pokeapi.co/api/v2/type/");

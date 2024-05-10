@@ -68,20 +68,6 @@ function Header() {
 
     setLoading(false);
   };
-  const filtereData = () => {
-    setLoading(true);
-    console.log("whyh");
-    if (abilityValue === null) {
-      fetchData(1);
-    } else {
-      let filteredData = globalData.filter((item) =>
-        item.abilities.some((ability) => ability.ability.name === abilityValue)
-      );
-      setDisplayData(filteredData);
-    }
-    console.log(displayData);
-    setLoading(false);
-  };
 
   const Abilities = async () => {
     let data = await fetch("https://pokeapi.co/api/v2/ability?limit=100");
@@ -92,10 +78,26 @@ function Header() {
   useEffect(() => {
     Abilities();
   }, []);
+
   useEffect(() => {
-    filtereData();
+    if (abilityValue !== null) {
+      filtereData();
+    }
   }, [abilityValue]);
 
+  const filtereData = () => {
+    setLoading(true);
+
+    if (abilityValue === null) {
+      fetchData(1);
+    } else {
+      let filteredData = globalData.filter((item) =>
+        item.abilities.some((ability) => ability.ability.name === abilityValue)
+      );
+      setDisplayData(filteredData);
+    }
+    setLoading(false);
+  };
   return (
     <header>
       <div className="logo">

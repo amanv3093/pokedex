@@ -13,6 +13,21 @@ function Wishlist() {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
   }, []);
+  // const addToWishlist = (item) => {
+  //   // Check if item already exists in favorites
+  //   if (!favorites.find((fav) => fav.id === item.id)) {
+  //     const updatedFavorites = [...favorites, item];
+  //     setFavorites(updatedFavorites);
+  //     localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Update local storage
+  //   }
+  // };
+
+  // // Function to remove item from wishlist
+  // const removeFromWishlist = (itemId) => {
+  //   const updatedFavorites = favorites.filter((fav) => fav.id !== itemId);
+  //   setFavorites(updatedFavorites);
+  //   localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Update local storage
+  // };
 
   return (
     <div>
