@@ -15,7 +15,7 @@ export const DataContextProvider = (props) => {
   const [searchFilter, setSearchFilter] = useState([]);
   const [globalData, setGlobalData] = useState([]);
   const [abilityValue, setAbilityValue] = useState(null);
-  // const [newTypeData, SetNewTypeData] = useState("All");
+  const [compareData, setCompareData] = useState([]);
   const [page, setPage] = useState(1);
   const [favorites, setFavorites] = useState([]);
 
@@ -46,8 +46,6 @@ export const DataContextProvider = (props) => {
       setLoading(false);
     }
   }
-
-
 
   console.log(displayData);
   useEffect(() => {
@@ -100,6 +98,8 @@ export const DataContextProvider = (props) => {
         setFavorites,
         abilityValue,
         setAbilityValue,
+        compareData,
+        setCompareData,
       }}
     >
       {props.children}

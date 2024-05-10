@@ -104,16 +104,23 @@ function Header() {
         <h1>
           Pok<span style={{ color: "rgb(239 59 77)" }}>é</span>dex
         </h1>
-        <NavLink to="/wishlist" className="favorite-head-anchor">
-          <span
-            className="material-symbols-outlined favorite-head"
-            style={{
-              color: favorites.length > 0 ? "rgb(239 59 77) " : "#383636",
-            }}
-          >
-            favorite
-          </span>
-        </NavLink>
+        <div>
+          <NavLink to="/wishlist" className="favorite-head-anchor">
+            <span
+              className="material-symbols-outlined favorite-head"
+              style={{
+                color: favorites.length > 0 ? "rgb(239 59 77) " : "#383636",
+              }}
+            >
+              favorite
+            </span>
+          </NavLink>
+          <NavLink to="/compare" className="favorite-head-anchor">
+            <span className="material-symbols-outlined favorite-head">
+              compare_arrows
+            </span>
+          </NavLink>
+        </div>
       </div>
       <div className="header-types">
         <div className="header-types-box1">

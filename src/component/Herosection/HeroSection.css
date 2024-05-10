@@ -68,6 +68,10 @@
 .favorite-active {
   color: rgb(239 59 77) !important; /* Change to your desired red color */
 }
+.compareData-active {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: red !important;
+}
 .material-symbols-outlined {
   cursor: pointer;
   color: #383636;
