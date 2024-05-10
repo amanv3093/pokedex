@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./HeroSection.css";
 import { NavLink } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-
+import loader from "../../assets/Spinner@1x-1.0s-200px-200px.gif";
 function HeroSection() {
   const {
     displayData,
@@ -48,7 +48,7 @@ function HeroSection() {
         dataLength={displayData.length}
         next={fetchMoreData}
         hasMore={typeData === "All" ? true : false}
-        loader=<h1>loading..</h1>
+        loader=<img src={loader} />
       >
         {displayData &&
           displayData.map((e, index) => (

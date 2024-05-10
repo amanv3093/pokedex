@@ -47,6 +47,8 @@ export const DataContextProvider = (props) => {
     }
   }
 
+
+
   console.log(displayData);
   useEffect(() => {
     async function fetchData2() {
