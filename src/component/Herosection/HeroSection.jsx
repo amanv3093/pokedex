@@ -50,27 +50,32 @@ function HeroSection() {
   };
 
   const toggleCompare = (pokemon) => {
-    const isComparable = compareData.some((comp) => comp.id === pokemon.id);
+    if (compareData.length < 2) {
+      const isComparable = compareData.some((comp) => comp.id === pokemon.id);
 
-    if (!isComparable) {
-      const updatedCompareData = [...compareData, pokemon];
-      setCompareData(updatedCompareData);
+      if (!isComparable) {
+        const updatedCompareData = [...compareData, pokemon];
+        setCompareData(updatedCompareData);
+      } else {
+        const updatedCompareData = compareData.filter(
+          (comp) => comp.id !== pokemon.id
+        );
+        setCompareData(updatedCompareData);
+      }
     } else {
       const updatedCompareData = compareData.filter(
         (comp) => comp.id !== pokemon.id
       );
       setCompareData(updatedCompareData);
-      
     }
   };
 
   const handleCheckboxChange = (event, pokemon) => {
     event.preventDefault();
-    if (compareData.length < 2) {
-      const isChecked = !checkedItems[pokemon.id];
-      setCheckedItems({ ...checkedItems, [pokemon.id]: isChecked });
-      toggleCompare(pokemon);
-    }
+
+    const isChecked = !checkedItems[pokemon.id];
+    setCheckedItems({ ...checkedItems, [pokemon.id]: isChecked });
+    toggleCompare(pokemon);
   };
 
   return (

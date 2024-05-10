@@ -88,7 +88,10 @@ function Compare() {
               favorite
             </span> */}
                     </div>
-                    <div className="details-box1-img">
+                    <div
+                      className="details-box1-img"
+                      style={{ width: "150px" }}
+                    >
                       <img
                         src={
                           element.sprites.other.dream_world.front_default ===
