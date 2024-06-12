@@ -112,7 +112,7 @@ function HeroSection() {
                     >
                       favorite
                     </span>
-                    <span
+                    {/* <span
                       onClick={(event) => handleCheckboxChange(event, e)}
                       className={`material-symbols-outlined ${
                         compareData.some((fav) => fav.id === e.id)
@@ -121,7 +121,7 @@ function HeroSection() {
                       }`}
                     >
                       check_box_outline_blank
-                    </span>
+                    </span> */}
                   </div>
                 </div>
                 <div className="pokemon-img">

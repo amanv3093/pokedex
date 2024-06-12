@@ -115,11 +115,11 @@ function Header() {
               favorite
             </span>
           </NavLink>
-          <NavLink to="/compare" className="favorite-head-anchor">
+          {/* <NavLink to="/compare" className="favorite-head-anchor">
             <span className="material-symbols-outlined favorite-head">
               compare_arrows
             </span>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
       <div className="header-types">

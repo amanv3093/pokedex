@@ -43,19 +43,6 @@ function Compare() {
     });
   };
 
-  //   const toggleFavorite = (pokemon) => {
-  //     const isFavorite = favorites.some((fav) => fav.id === pokemon.id);
-
-  //     if (!isFavorite) {
-  //       const updatedFavorites = [...favorites, pokemon];
-  //       setFavorites(updatedFavorites);
-  //     } else {
-  //       const updatedFavorites = favorites.filter((fav) => fav.id !== pokemon.id);
-  //       setFavorites(updatedFavorites);
-  //     }
-  //     localStorage.setItem("favorites", JSON.stringify(favorites));
-  //   };
-  console.log(compareData);
   return (
     <>
       {" "}
